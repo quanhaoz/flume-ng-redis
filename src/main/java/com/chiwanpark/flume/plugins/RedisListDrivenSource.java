@@ -55,4 +55,14 @@ public class RedisListDrivenSource extends AbstractRedisSource implements Pollab
 
     return Status.READY;
   }
+
+  @Override
+  public long getBackOffSleepIncrement() {
+    return 10;
+  }
+
+  @Override
+  public long getMaxBackOffSleepInterval() {
+    return 100;
+  }
 }
